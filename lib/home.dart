@@ -34,82 +34,58 @@ class _HomepageState extends State<Homepage> {
       // ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: Colors.green[300],
+        color: const Color(0xff007251),
         shape: const CircularNotchedRectangle(),
         notchMargin: 8,
-        child: Container(
-          height: 60,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  MaterialButton(
-                    minWidth: 40,
-                    onPressed: () {
-                      setState(() {
-                        currentScreen = Home1();
-                        currentTab = 0;
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.home,
-                          color: currentTab == 0 ? Colors.white : Colors.green,
-                        ),
-                      ],
-                    ),
+        child: SizedBox(
+            height: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                MaterialButton(
+                  minWidth: 40,
+                  onPressed: () {
+                    setState(() {
+                      currentScreen = const Home1();
+                      currentTab = 0;
+                    });
+                  },
+                  child: Icon(
+                    Icons.home,
+                    size: 40,
+                    color: currentTab == 0 ? Colors.blue : Colors.white,
                   ),
-                  const SizedBox(
-                    width: 100,
+                ),
+                MaterialButton(
+                  minWidth: 40,
+                  onPressed: () {
+                    setState(() {
+                      currentScreen = const Kategori();
+                      currentTab = 1;
+                    });
+                  },
+                  child: Icon(
+                    Icons.folder,
+                    size: 40,
+                    color: currentTab == 1 ? Colors.blue : Colors.white,
                   ),
-                  MaterialButton(
-                    minWidth: 40,
-                    onPressed: () {
-                      setState(() {
-                        currentScreen = Kategori();
-                        currentTab = 0;
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.folder,
-                          color: currentTab == 0 ? Colors.white : Colors.green,
-                        ),
-                      ],
-                    ),
+                ),
+                MaterialButton(
+                  minWidth: 40,
+                  onPressed: () {
+                    setState(() {
+                      currentScreen = const Profil();
+                      currentTab = 2;
+                    });
+                  },
+                  child: Icon(
+                    Icons.person,
+                    size: 40,
+                    color: currentTab == 2 ? Colors.blue : Colors.white,
                   ),
-                  const SizedBox(
-                    width: 100,
-                  ),
-                  MaterialButton(
-                    minWidth: 40,
-                    onPressed: () {
-                      setState(() {
-                        currentScreen = Profil();
-                        currentTab = 0;
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.person,
-                          color: currentTab == 0 ? Colors.white : Colors.green,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
+                ),
+              ],
+            )),
       ),
     );
   }
