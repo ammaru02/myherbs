@@ -11,6 +11,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class _RegisterState extends State<Register> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Homepage(),
+                        builder: (context) => const Profil(),
                       ));
                 },
                 tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
@@ -105,18 +106,28 @@ class _RegisterState extends State<Register> {
                   top: 5, bottom: 10, right: 40, left: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text('Password'),
+                children: [
+                  const Text('Password'),
                   TextField(
+                    obscureText: _isObscure,
                     scrollPadding: EdgeInsets.all(40),
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.all(
                           Radius.circular(15),
                         ),
                       ),
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
+                      suffixIcon: IconButton(
+                          icon: Icon(_isObscure
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              _isObscure = !_isObscure;
+                            });
+                          }),
                     ),
                   ),
                 ],
@@ -130,7 +141,7 @@ class _RegisterState extends State<Register> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Register(),
+                      builder: (context) => const Profil(),
                     ));
               },
             ),

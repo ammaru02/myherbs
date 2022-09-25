@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ButtonCustom extends StatelessWidget {
-  final button;
-  final onpress;
-  final warna;
-  final warna1;
+  final dynamic button;
+  final dynamic onpress;
+  final dynamic warna;
+  final dynamic warna1;
   const ButtonCustom({Key? key, required this.button,required this.onpress,required this.warna,required this.warna1}) : super(key: key);
 
   @override

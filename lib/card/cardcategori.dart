@@ -8,7 +8,7 @@ class CardCategori extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.only(right: 30, left: 30),
+      margin: const EdgeInsets.only(right: 30, left: 30, bottom: 10),
       elevation: 10,
       shadowColor: Colors.black,
       child: Container(

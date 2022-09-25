@@ -11,9 +11,10 @@ class Cardcostum extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Card(
-          child: Container(color: Colors.green,
-          height: 100,
-          width: 100,
+          child: Container(
+            color: Colors.white,
+            height: 140,
+            width: 100,
             child: InkWell(
               onTap: () {
                 Navigator.push(
@@ -23,28 +24,37 @@ class Cardcostum extends StatelessWidget {
                     ));
               },
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 20,
+                    decoration: const BoxDecoration(
                     color: Colors.blue,
-                    height: 20,
+                      borderRadius: BorderRadius.all(Radius.circular(15))
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    height: 100,
                   ),
                   // Image.network(
                   //   'https://cdn.pixabay.com/photo/2019/11/10/17/36/indonesia-4616370_1280.jpg',
                   //   width: 100,
                   // ),
-                  const Text('Penjelasan',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  const Text('Penjelasan'),
+                  Column(
+                    children: const [
+                      Text('Penjelasan',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Penjelasan'),
+                    ],
+                  ),
                 ],
               ),
             ),
           ),
         ),
         Card(
-          child: Container(color: Colors.green,
-          height: 100,
-          width: 100,
+          child: Container(
+            color: Colors.white,
+            height: 140,
+            width: 100,
             child: InkWell(
               onTap: () {
                 Navigator.push(
@@ -54,19 +64,27 @@ class Cardcostum extends StatelessWidget {
                     ));
               },
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 20,
+                    decoration: const BoxDecoration(
                     color: Colors.blue,
-                    height: 20,
+                      borderRadius: BorderRadius.all(Radius.circular(15))
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    height: 100,
                   ),
                   // Image.network(
                   //   'https://cdn.pixabay.com/photo/2019/11/10/17/36/indonesia-4616370_1280.jpg',
                   //   width: 100,
                   // ),
-                  const Text('Penjelasan',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  const Text('Penjelasan'),
+                  Column(
+                    children: const [
+                      Text('Penjelasan',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Penjelasan'),
+                    ],
+                  ),
                 ],
               ),
             ),
