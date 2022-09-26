@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myherbs/button/costumbutton.dart';
 import 'package:myherbs/home.dart';
-import 'package:myherbs/onbording/onbording.dart';
-import 'package:myherbs/page/profile1.dart';
 import 'package:myherbs/page/register.dart';
 
 class Profil extends StatefulWidget {
@@ -118,7 +116,7 @@ class _ProfilState extends State<Profil> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const OnbordingScreen(),
+                      builder: (context) => const Homepage(),
                     ));
               },
             ),

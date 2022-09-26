@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myherbs/page/profile1.dart';
 import 'page/home1.dart';
 import 'page/kategori.dart';
-import 'page/profil.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myherbs/button/costumbutton.dart';
-import 'package:myherbs/home.dart';
+import 'package:myherbs/page/profil.dart';
 
 class OnbordingScreen extends StatefulWidget {
   const OnbordingScreen({Key? key}) : super(key: key);
@@ -18,7 +18,8 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
         children: [
           Expanded(
             child: PageView.builder(
-              itemBuilder: (context, index) => OnbordingContent(
+              itemCount: 1,
+              itemBuilder: (context, index) => const OnbordingContent(
                 image: "assets/google.png",
                 title: "selamat datang",
                 description: "hello guys",
@@ -79,11 +80,14 @@ class OnbordingContent extends StatelessWidget {
               warna1: Colors.white,
               button: "Next",
               onpress: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Homepage(),
-                    ));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder){
+                  return const Profil();
+                }));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => const Profil(),
+                //     ));
               },
             ),
         const Spacer(),
