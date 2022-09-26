@@ -3,9 +3,15 @@ import 'package:myherbs/onbording/onbording.dart';
 import 'package:myherbs/splash/splash.dart';
 // import 'package:flutter_native_splash/flutter_native_splash.dart';
 // import 'package:introduction_screen/introduction_screen.dart';
+// int introduction = 0;
 
-void main() {}
+void main() {
+  runApp(const MyApp());
+  }
 
+// Future initIntroduction() async{
+//   final prefs = await SharedPreferences.getInstance();
+// } 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
