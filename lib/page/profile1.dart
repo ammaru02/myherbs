@@ -39,7 +39,7 @@ class _ProfilandaState extends State<Profilanda> {
               padding: EdgeInsets.only(right: 12, top: 20),
               child: Text(
                 'MyHerbs',
-                style: TextStyle(color: Colors.green),
+                style: TextStyle(color: Colors.white),
               )),
         ],
       ),

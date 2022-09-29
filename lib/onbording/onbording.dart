@@ -20,7 +20,7 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
             child: PageView.builder(
               itemCount: 1,
               itemBuilder: (context, index) => const OnbordingContent(
-                image: "assets/google.png",
+                image: "assets/logo.png",
                 title: "selamat datang",
                 description: "hello guys",
               ),

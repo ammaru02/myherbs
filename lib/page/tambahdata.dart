@@ -1,39 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:myherbs/button/costumbutton.dart';
-import 'package:myherbs/home.dart';
-import 'package:myherbs/page/register.dart';
+import 'package:myherbs/page/profil.dart';
+import 'package:myherbs/page/upload.dart';
 
-class Profil extends StatefulWidget {
-  const Profil({Key? key}) : super(key: key);
+class TambahData extends StatefulWidget {
+  const TambahData({Key? key}) : super(key: key);
 
   @override
-  State<Profil> createState() => _ProfilState();
+  State<TambahData> createState() => _TambahDataState();
 }
 
-class _ProfilState extends State<Profil> {
+class _TambahDataState extends State<TambahData> {
   bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           shadowColor: Colors.transparent,
-          // leading: Builder(
-          //   builder: (BuildContext context) {
-          //     return IconButton(
-          //       icon: const Icon(
-          //         Icons.arrow_back_rounded,
-          //         color: Colors.black,
-          //       ),
-          //       onPressed: () {
-          //         Scaffold.of(context).openDrawer();
-          //       },
-          //       tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          //     );
-          //   },
-          // ),
+          leading: Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                icon: const Icon(
+                  Icons.arrow_back_rounded,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Upload(),
+                      ));
+                },
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              );
+            },
+          ),
           actions: const [
             Padding(
                 padding: EdgeInsets.only(right: 12, top: 20),
@@ -49,10 +52,32 @@ class _ProfilState extends State<Profil> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
-                Text('LOGIN',
+                Text('Tambah Data',
                     style:
                         TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ],
+            ),
+            Container(
+              margin: const EdgeInsets.only(
+                  top: 5, bottom: 20, right: 40, left: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text('Judul'),
+                  TextField(
+                    scrollPadding: EdgeInsets.all(40),
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Container(
               margin: const EdgeInsets.only(
@@ -85,7 +110,7 @@ class _ProfilState extends State<Profil> {
                   const Text('Password'),
                   TextField(
                     obscureText: _isObscure,
-                    scrollPadding: const EdgeInsets.all(40),
+                    scrollPadding: EdgeInsets.all(40),
                     decoration: InputDecoration(
                       enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
@@ -111,27 +136,12 @@ class _ProfilState extends State<Profil> {
             ButtonCustom(
               warna: Colors.green,
               warna1: Colors.white,
-              button: "Login",
-              onpress: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder){
-                  return const Homepage();
-                }));
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //       builder: (context) => const Homepage(),
-                //     ));
-              },
-            ),
-            ButtonCustom(
-              warna: Colors.grey,
-              warna1: Colors.grey[800],
-              button: "Register",
+              button: "Tambah Data",
               onpress: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Register(),
+                      builder: (context) => const Profil(),
                     ));
               },
             ),

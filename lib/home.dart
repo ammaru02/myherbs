@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myherbs/page/profile1.dart';
 import 'page/home1.dart';
-import 'page/kategori.dart';
+import 'page/upload.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class _HomepageState extends State<Homepage> {
   int currentTab = 0;
   final List<Widget> screens = [
     const Home1(),
-    const Kategori(),
+    const Upload(),
     const Profilanda()
   ];
 
@@ -24,6 +24,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: PageStorage(
         child: currentScreen,
         bucket: bucket,
@@ -34,7 +35,7 @@ class _HomepageState extends State<Homepage> {
       // ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: const Color(0xff007251),
+        color: const Color(0xffcebea5),
         shape: const CircularNotchedRectangle(),
         notchMargin: 8,
         child: SizedBox(
@@ -79,7 +80,7 @@ class _HomepageState extends State<Homepage> {
                           : const Shadow(
                               offset: Offset(3.0, 3.0),
                               blurRadius: 3.0,
-                              color: Color(0xff007251),
+                              color: Color(0xffcebea5),
                             ),
                     ],
                   ),
@@ -88,7 +89,7 @@ class _HomepageState extends State<Homepage> {
                   minWidth: 40,
                   onPressed: () {
                     setState(() {
-                      currentScreen = const Kategori();
+                      currentScreen = const Upload();
                       currentTab = 1;
                     });
                   },
@@ -107,7 +108,7 @@ class _HomepageState extends State<Homepage> {
                           : const Shadow(
                               offset: Offset(3.0, 3.0),
                               blurRadius: 3.0,
-                              color: Color(0xff007251),
+                              color: Color(0xffcebea5),
                             ),
                     ],
                   ),
@@ -135,7 +136,7 @@ class _HomepageState extends State<Homepage> {
                           : const Shadow(
                               offset: Offset(3.0, 3.0),
                               blurRadius: 3.0,
-                              color: Color(0xff007251),
+                              color: Color(0xffcebea5),
                             ),
                     ],
                   ),
