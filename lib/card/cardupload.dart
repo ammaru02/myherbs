@@ -1,29 +1,39 @@
 import 'package:flutter/material.dart';
-
-import '../page/details.dart';
+import 'package:myherbs/page/detailsupload.dart';
 
 class CardUpload extends StatelessWidget {
-  const CardUpload({Key? key}) : super(key: key);
+  final String fotoupload;
+  final String penjelasanupload1;
+  final String penjelasanupload2;
+  final Widget widget;
+  const CardUpload(
+      {Key? key,
+      required this.fotoupload,
+      required this.penjelasanupload1,
+      required this.penjelasanupload2, required this.widget})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.only(right: 30, left: 30, bottom: 10),
-      elevation: 10,
-      shadowColor: Colors.black,
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 50,
-        child: InkWell(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Details(),
-                ));
-          },
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => widget,
+          ),
+        );
+      },
+      child: Card(
+        margin: const EdgeInsets.only(right: 30, left: 30, bottom: 10),
+        elevation: 10,
+        shadowColor: Colors.black,
+        child: SizedBox(
+          width: double.infinity,
+          height: 50,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
             children: [
               Row(
                 children: [
@@ -31,20 +41,24 @@ class CardUpload extends StatelessWidget {
                     width: 10,
                   ),
                   Container(
-                    width: 30,
-                    color: Colors.blue,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(fotoupload),
+                      ),
+                    ),
                     height: 30,
+                    width: 30,
                   ),
                   const SizedBox(
                     width: 10,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Text('Penjelasan',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      Text('Penjelasan'),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(penjelasanupload1,
+                          style: const TextStyle(fontWeight: FontWeight.bold)),
+                      Text(penjelasanupload2),
                     ],
                   ),
                 ],

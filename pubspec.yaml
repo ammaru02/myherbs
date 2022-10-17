@@ -31,6 +31,13 @@ dependencies:
     sdk: flutter
   shared_preferences: ^2.0.15
   introduction_screen: ^3.0.2
+  image_picker: ^0.8.5+3
+  flutter_rating_bar: ^4.0.1
+  like_button: ^2.0.5
+  editable_image: ^1.1.0
+  form_field_validator: ^1.0.1
+  # comment_box: ^0.0.17
+  # image_form_field: ^0.1.0
 
 
   # The following adds the Cupertino Icons font to your application.

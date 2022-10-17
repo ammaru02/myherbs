@@ -1,29 +1,20 @@
-import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 // import 'package:myherbs/button/costumbutton.dart';
 // import 'package:myherbs/page/profil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myherbs/api/model.dart';
+
+import 'tambahdata.dart';
 // import 'package:myherbs/page/upload.dart';
 
-class TambahData extends StatefulWidget {
-  final Herbal? updateData;
-  const TambahData({Key? key, this.updateData}) : super(key: key);
+class UpdateData extends StatefulWidget {
+  const UpdateData({Key? key}) : super(key: key);
 
   @override
-  State<TambahData> createState() => _TambahDataState();
+  State<UpdateData> createState() => _UpdateDataState();
 }
 
-class _TambahDataState extends State<TambahData> {
-
-  TextEditingController nametanaman = TextEditingController();
-  TextEditingController namelatin = TextEditingController();
-  TextEditingController khasiat = TextEditingController();
-  TextEditingController pengolahan = TextEditingController();
-  TextEditingController deskripsi = TextEditingController();
-
-
+class _UpdateDataState extends State<UpdateData> {
   File? image;
   Future getImage() async {
     final ImagePicker _picker = ImagePicker();
@@ -31,18 +22,6 @@ class _TambahDataState extends State<TambahData> {
         await _picker.pickImage(source: ImageSource.gallery);
     image = File(imagePicked!.path);
     setState(() {});
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    log(widget.updateData?.id.toString() ?? 'kosong');
-    if (widget.updateData != null) {
-      nametanaman.text = widget.updateData!.namaTanaman;
-      namelatin.text = widget.updateData!.namaLatin;
-      pengolahan.text = widget.updateData!.pengolahan;
-      deskripsi.text = widget.updateData!.deskripsi;
-    }
   }
 
   @override
@@ -84,7 +63,7 @@ class _TambahDataState extends State<TambahData> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: const [
-                      Text('Form Input Obat Herbal',
+                      Text('Form Input Update',
                           style:
                               TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                     ],
@@ -94,8 +73,8 @@ class _TambahDataState extends State<TambahData> {
                 ],
               ),
               const SizedBox(height: 20,),
-              Input(judul: 'Nama Tanaman', controller: namelatin,),
-              Input(judul: 'Nama Latin', controller: namelatin,),
+              const Input(judul: 'Nama Tanaman'),
+              const Input(judul: 'Nama Latin'),
               Container(
                 margin: const EdgeInsets.only(
                   bottom: 10, right: 40, left: 40),
@@ -128,9 +107,9 @@ class _TambahDataState extends State<TambahData> {
                   ],
                 ),
               ),
-              Input(judul: 'Khasiat', controller: khasiat,),
-              Input(judul: 'Pengolahan', controller: pengolahan,),
-              Input(judul: 'Deskripsi', controller: deskripsi,)
+              const Input(judul: 'Khasiat'),
+              const Input(judul: 'Pengolahan'),
+              const Input(judul: 'Deskripsi')
         
               // Container(
               //   margin: const EdgeInsets.only(
@@ -234,8 +213,7 @@ class _TambahDataState extends State<TambahData> {
 
 class Input extends StatelessWidget {
   final String judul;
-  final TextEditingController controller;
-  const Input({super.key, required this.judul, required this.controller,});
+  const Input({super.key, required this.judul});
 
   @override
   Widget build(BuildContext context) {
@@ -246,12 +224,11 @@ class Input extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(judul),
-                    TextField(
-                      controller: controller,
+                    const TextField(
                       keyboardType: TextInputType.multiline,
                       maxLines: null,
-                      scrollPadding: const EdgeInsets.all(40),
-                      decoration: const InputDecoration(
+                      scrollPadding: EdgeInsets.all(40),
+                      decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
                           borderRadius: BorderRadius.all(

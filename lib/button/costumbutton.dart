@@ -16,7 +16,7 @@ class ButtonCustom extends StatelessWidget {
                   bottomLeft:  Radius.circular(15.0),
                   topRight:  Radius.circular(15.0),
                     topLeft: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0))),
+                    bottomRight: Radius.circular(15.0)),),
       
       width: MediaQuery.of(context).size.width,
       height: 50,

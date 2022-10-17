@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(backgroundColor: Colors.white,
       body: Center(
-        child: Container(width: 100, height: 100,
+        child: Container(width: 200, height: 200,
         child: Image.asset("assets/logo.png"),),
       ),),
     );

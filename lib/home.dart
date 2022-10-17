@@ -35,11 +35,11 @@ class _HomepageState extends State<Homepage> {
       // ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: const Color(0xffcebea5),
+        color: const Color(0xff007251),
         shape: const CircularNotchedRectangle(),
         notchMargin: 8,
         child: SizedBox(
-            height: 50,
+            height: 60,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -66,53 +66,63 @@ class _HomepageState extends State<Homepage> {
 
                       //   ],
                       // ),
-                      Icon(
+                      Column(
+                        children: [
+                          Icon(
                     Icons.home,
                     size: 40,
                     color: currentTab == 0 ? Colors.white : Colors.white,
                     shadows: [
-                      currentTab == 0
-                          ? const Shadow(
-                              offset: Offset(3.0, 3.0),
-                              blurRadius: 8.0,
-                              color: Colors.black,
-                            )
-                          : const Shadow(
-                              offset: Offset(3.0, 3.0),
-                              blurRadius: 3.0,
-                              color: Color(0xffcebea5),
-                            ),
+                          currentTab == 0
+                              ? const Shadow(
+                                  offset: Offset(3.0, 3.0),
+                                  blurRadius: 8.0,
+                                  color: Colors.black,
+                                )
+                              : const Shadow(
+                                  offset: Offset(3.0, 3.0),
+                                  blurRadius: 3.0,
+                                  color: Color(0xff007251),
+                                ),
                     ],
                   ),
+                  const Text('Home',style: TextStyle(color: Colors.white))
+                        ],
+                      ),
                 ),
-                MaterialButton(
-                  minWidth: 40,
-                  onPressed: () {
-                    setState(() {
-                      currentScreen = const Upload();
-                      currentTab = 1;
-                    });
-                  },
-                  child: 
-                  Icon(
-                    Icons.folder,
-                    size: 40,
-                    color: currentTab == 1 ? Colors.white : Colors.white,
-                    shadows: [
-                      currentTab == 1
-                          ? const Shadow(
-                              offset: Offset(3.0, 3.0),
-                              blurRadius: 8.0,
-                              color: Colors.black,
-                            )
-                          : const Shadow(
-                              offset: Offset(3.0, 3.0),
-                              blurRadius: 3.0,
-                              color: Color(0xffcebea5),
-                            ),
-                    ],
-                  ),
-                ),
+                // MaterialButton(
+                //   minWidth: 40,
+                //   onPressed: () {
+                //     setState(() {
+                //       currentScreen = const Upload();
+                //       currentTab = 1;
+                //     });
+                //   },
+                //   child: 
+                //   Column(
+                //     children: [
+                //       Icon(
+                //         Icons.upload,
+                //         size: 40,
+                //         color: currentTab == 1 ? Colors.white : Colors.white,
+                //         shadows: [
+                //           currentTab == 1
+                //               ? const Shadow(
+                //                   offset: Offset(3.0, 3.0),
+                //                   blurRadius: 8.0,
+                //                   color: Colors.black,
+                //                 )
+                //               : const Shadow(
+                //                   offset: Offset(3.0, 3.0),
+                //                   blurRadius: 3.0,
+                //                   color: Color(0xff007251),
+                //                 ),
+                //         ],
+                //       ),
+                //       const Text('Upload',style: TextStyle(color: Colors.white)),
+                //     ],
+                //   ),
+                // ),
                 MaterialButton(
                   minWidth: 40,
                   onPressed: () {
@@ -122,22 +132,27 @@ class _HomepageState extends State<Homepage> {
                     });
                   },
                   child: 
-                  Icon(
-                    Icons.person,
-                    size: 40,
-                    color: currentTab == 2 ? Colors.white : Colors.white,
-                    shadows: [
-                      currentTab == 2
-                          ? const Shadow(
-                              offset: Offset(3.0, 3.0),
-                              blurRadius: 8.0,
-                              color: Colors.black,
-                            )
-                          : const Shadow(
-                              offset: Offset(3.0, 3.0),
-                              blurRadius: 3.0,
-                              color: Color(0xffcebea5),
-                            ),
+                  Column(
+                    children: [
+                      Icon(
+                        Icons.person,
+                        size: 40,
+                        color: currentTab == 2 ? Colors.white : Colors.white,
+                        shadows: [
+                          currentTab == 2
+                              ? const Shadow(
+                                  offset: Offset(3.0, 3.0),
+                                  blurRadius: 8.0,
+                                  color: Colors.black,
+                                )
+                              : const Shadow(
+                                  offset: Offset(3.0, 3.0),
+                                  blurRadius: 3.0,
+                                  color: Color(0xff007251),
+                                ),
+                        ],
+                      ),
+                      const Text('Profile', style: TextStyle(color: Colors.white),)
                     ],
                   ),
                 ),
